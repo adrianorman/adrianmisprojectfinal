@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Page Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Menu (consistent across pages) -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="discover.html">Discover UMD</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Your page content goes here -->
+    <main>
+        <!-- Page-specific content -->
+        <section class="resume-section" style="max-width:1100px; margin:4rem auto; padding:0 1rem;">
+            <div style="display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap;">
+                <aside style="flex:1 1 320px; max-width:360px; background:white; padding:1.5rem; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08);">
+                    <h2 style="margin-top:0; color:var(--primary-color);">Resume</h2>
+                    <p style="color:var(--text-color); line-height:1.5;">Below is my resume (November 2025). You can view it inline or download a copy. The resume includes my education, work experience, skills, and leadership activities.</p>
+                    <ul style="color:var(--text-color);">
+                        <li><strong>Education:</strong> University of Minnesota Duluth — MIS</li>
+                        <li><strong>Experience:</strong> Internships, part-time roles, and projects</li>
+                        <li><strong>Leadership:</strong> Club president and team roles</li>
+                    </ul>
+                    <p style="margin-top:1rem;">
+                        <a href="files/Resume%20November%202025.pdf" download style="display:inline-block; background:var(--primary-color); color:#fff; padding:0.6rem 1rem; border-radius:6px; text-decoration:none;">Download PDF</a>
+                    </p>
+                </aside>
+
+                <div style="flex:2 1 560px; min-width:280px;">
+                    <div style="background:white; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); overflow:hidden;">
+                        <!-- Embedded PDF viewer; browser will show native controls or fallback link -->
+                        <object data="files/Resume%20November%202025.pdf" type="application/pdf" width="100%" height="680">
+                            <p style="padding:1rem;">It appears your browser can't display PDFs. You can <a href="files/Resume%20November%202025.pdf" download>download the resume here</a>.</p>
+                        </object>
+                    </div>
+                    <div style="text-align:center; margin-top:0.75rem;">
+                        <a href="files/Resume%20November%202025.pdf" download style="color:var(--primary-color); text-decoration:underline;">Download a copy of the resume (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (same on all pages) -->
+    <footer>
+        <p>&copy; 2025 Adrian Norman. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
