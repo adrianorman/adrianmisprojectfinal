@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Page Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Menu (consistent across pages) -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hobbies.html" class="active">Hobbies</a></li>
+                <li><a href="discover.html">Discover UMD</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Your page content goes here -->
+    <main>
+        <!-- Page-specific content -->
+        <section class="page-header" style="text-align:center; padding:5rem 1rem 2rem;">
+            <h1 class="page-title" style="color:var(--primary-color); font-size:2.5rem;">My Hobbies: Exercising, Jiu-Jitsu, Skating</h1>
+        </section>
+
+        <section style="max-width:760px; margin: 0 auto 2rem; padding: 0 1rem;">
+            <div style="max-width:720px; margin: 1.5rem auto; background: white; padding:1rem 1.25rem; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); text-align:left;">
+                <h2 style="color:var(--primary-color); font-size:1.4rem; margin-bottom:0.5rem; font-weight:600;">Exercising</h2>
+                <p style="color:var(--text-color); font-size:1rem; line-height:1.5; margin:0;">I am an active person. Going from participating in three sports throughout high school to having none in college was a tough adjustment. To combat this, I started going to the gym six days a week and running. This hobby is important to me because I want to stay active. I will be participating in the upcoming half marathon for Grandma's Marathon, so this will be a good test of my exercise and endurance.</p>
+            </div>
+        </section>
+        
+        <section style="max-width:760px; margin: 0 auto 2rem; padding: 0 1rem;">
+            <div style="max-width:720px; margin: 1.5rem auto; background: white; padding:1rem 1.25rem; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); text-align:left;">
+                <h2 style="color:var(--primary-color); font-size:1.4rem; margin-bottom:0.5rem; font-weight:600;">Jiu-Jitsu</h2>
+                <p style="color:var(--text-color); font-size:1rem; line-height:1.5; margin:0;">Jiu-Jitsu is important to me because I love combat sports. I have wrestled since I was four years old, so after graduating and no longer wrestling, I needed something similar to do. I joined a Jiu-Jitsu gym because it is similar to wrestling and restored the competitive element that was missing after wrestling.</p>
+            </div>
+        </section>
+        
+            <section style="max-width:760px; margin: 0 auto 2rem; padding: 0 1rem;">
+                <div style="max-width:720px; margin: 1.5rem auto; background: white; padding:1rem 1.25rem; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); text-align:left;">
+                    <h2 style="color:var(--primary-color); font-size:1.4rem; margin-bottom:0.5rem; font-weight:600;">Skating</h2>
+                    <p style="color:var(--text-color); font-size:1rem; line-height:1.5; margin:0;">I have been skating for a few years. I got into it during the COVID-19 pandemic and bought my first skateboard shortly after. I enjoy it because it is a very rewarding activity — what you put in is what you get out. I recently bought a snow skate so I can continue skating during winter.</p>
+                </div>
+            </section>
+        <!-- Rotating image gallery -->
+        <section id="rotating-gallery-section" style="max-width:760px; margin: 2rem auto 0; padding: 0 1rem;">
+            <div style="max-width:720px; margin: 0.5rem auto 1.5rem; background: white; padding:1rem 1.25rem; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); text-align:center;">
+                <h2 style="color:var(--primary-color); font-size:1.25rem; margin-bottom:0.75rem;">Gallery</h2>
+                <img id="rotating-img" src="images/IMG_5173.jpeg" alt="Hobby image" style="width:100%; max-width:680px; height:auto; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,0.12); transition:opacity 0.6s ease-in-out; display:block; margin:0 auto; opacity:1;" />
+                <p style="color:var(--text-color); font-size:0.9rem; margin-top:0.75rem;">Images rotate every 5 seconds.</p>
+            </div>
+        </section>
+
+        <script>
+            (function(){
+                const images = [
+                    {src: 'images/IMG_5173.jpeg', alt: 'IMG_5173'},
+                    {src: 'images/IMG_4220.png', alt: 'IMG_4220'},
+                    {src: 'images/IMG_2764.jpeg', alt: 'IMG_2764'}
+                ];
+                let index = 0;
+                const imgEl = document.getElementById('rotating-img');
+
+                // Preload images
+                images.forEach(i => { const im = new Image(); im.src = i.src; });
+
+                function showNext(){
+                    // fade out
+                    imgEl.style.opacity = 0;
+                    setTimeout(() => {
+                        imgEl.src = images[index].src;
+                        imgEl.alt = images[index].alt;
+                        // advance index for next time
+                        index = (index + 1) % images.length;
+                        // fade in
+                        imgEl.style.opacity = 1;
+                    }, 600);
+                }
+
+                // Start cycle after initial delay so first image shows briefly
+                setInterval(showNext, 5000);
+            })();
+        </script>
+    </main>
+
+    <!-- Footer (same on all pages) -->
+    <footer>
+        <p>&copy; 2025 Adrian Norman. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

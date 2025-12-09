@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover UMD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .discover-header {
+            text-align: center;
+            padding: 6rem 0 3rem;
+        }
+
+        .discover-title {
+            color: var(--primary-color);
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .video-container {
+            /* Narrower container to suit portrait/vertical videos */
+            max-width: 420px;
+            margin: 0 auto 4rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper {
+            position: relative;
+            /* Portrait (9:16) Aspect Ratio - padding-bottom fallback for older browsers */
+            padding-bottom: 177.78%; /* 16 / 9 * 100 => 177.78% */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f0f0f0;
+            /* Preferred modern approach */
+            aspect-ratio: 9 / 16;
+            max-height: 80vh; /* keep it from getting too tall on small screens */
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-description {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* "Why I chose UMD" text box styles */
+        .why-box {
+            max-width: 420px;
+            margin: 1.5rem auto;
+            background: white;
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .why-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .why-text {
+            color: var(--text-color);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .discover-title {
+                font-size: 2.5rem;
+                padding: 0 1rem;
+            }
+
+            .video-container {
+                margin: 0 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="discover.html" class="active">Discover UMD</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="discover-header">
+            <h1 class="discover-title">Discover UMD</h1>
+        </div>
+
+        <div class="why-box" aria-labelledby="why-title">
+            <h2 id="why-title" class="why-title">Why I Chose UMD</h2>
+            <p class="why-text">I chose UMD for Duluth's close access to the outdoors and for its strong business school.</p>
+        </div>
+
+        <div class="why-box" aria-labelledby="like-title">
+            <h2 id="like-title" class="why-title">What I Like About Duluth</h2>
+            <p class="why-text">I appreciate Duluth's access to the outdoors. Being able to see Lake Superior from much of the city is a big plus. It has an urban feel but is smaller and more relaxed than Minneapolis.</p>
+        </div>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="videos/MIS_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-description">
+                <p>Experience the vibrant life at the University of Minnesota Duluth.</p>
+            </div>
+        </div>
+        
+        <div class="why-box" aria-labelledby="personal-title">
+            <h2 id="personal-title" class="why-title">Personal Experience and Campus Highlights</h2>
+            <p class="why-text">I enjoy UMD's amenities. The food court is a convenient place to grab a quick meal between classes. I am part of several clubs and serve as president of the Jiu-Jitsu Club. Many buildings are connected, so you rarely need to go outside during the cold winter months. The campus is surrounded by nature; deer are often seen roaming campus, and the Bagley Nature Area is right off campus.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 University of Minnesota Duluth. All rights reserved.</p>
+    </footer>
+</body>
+</html>

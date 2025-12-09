@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doom-Style FPS Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+
+        #gameContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #1a0000 0%, #000000 100%);
+        }
+
+        #gameCanvas {
+            border: 3px solid #8B0000;
+            cursor: none;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        #hud {
+            position: absolute;
+            bottom: 20px;
+            color: #00FF00;
+            font-size: 20px;
+            text-shadow: 2px 2px 4px #000;
+            display: flex;
+            gap: 40px;
+        }
+
+        #instructions {
+            position: absolute;
+            top: 20px;
+            color: #FFD700;
+            font-size: 16px;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border: 2px solid #FFD700;
+            border-radius: 5px;
+        }
+
+        #title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: #B22222;
+            text-shadow: 4px 4px 8px #000;
+            font-weight: bold;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 2s;
+        }
+
+        #title.show {
+            opacity: 1;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="discover.html">Discover UMD</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="game.html" class="active">Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="gameContainer">
+        <div id="instructions">
+            <strong>CLICK TO START</strong><br>
+            WASD - Move | Mouse - Look | Shift - Run | ESC - Unlock Mouse
+        </div>
+        <div id="title">DOOM</div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="hud">
+            <div class="stat">HEALTH: <span id="health">100</span>%</div>
+            <div class="stat">AMMO: <span id="ammo">50</span></div>
+            <div class="stat">KILLS: <span id="kills">0</span></div>
+            <div class="stat">POSITION: X:<span id="posX">0</span> Y:<span id="posY">0</span></div>
+        </div>
+    </div>
+    
+    <!-- Audio elements -->
+    <audio id="shootSound" src="sounds/shoot.mp3" preload="auto"></audio>
+    <audio id="hitSound" src="sounds/hit.mp3" preload="auto"></audio>
+    <audio id="pickupSound" src="sounds/pickup.mp3" preload="auto"></audio>
+    <audio id="hurtSound" src="sounds/hurt.mp3" preload="auto"></audio>
+    <audio id="enemySpawnSound" src="sounds/spawn.mp3" preload="auto"></audio>
+    <script src="js/game.js"></script>
+</body>
+</html>
